@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_note_list.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\menu\\menu_note_list.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\menu\\encode.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\menu\\encode.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\menu\\history.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\menu\\history.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\menu\\scan_menu.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\menu\\scan_menu.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\menu\\capture.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\menu\\capture.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_main.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\menu\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_shopp_list.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\menu\\menu_shopp_list.xml"
+    }
+]

@@ -1,0 +1,110 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\e.jpg",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\e.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\d.jpg",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\d.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shopper_icon.png",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\shopper_icon.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\apple.png",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\apple.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\launcher_icon.png",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\launcher_icon.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\textview_border.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\textview_border.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_ic_clear.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_search_dropdown_light.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_search_dropdown_light.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_searchview_right_holo_light.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_textfield_searchview_right_holo_light.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_ab_holo_dark.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_spinner_ab_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\c.jpg",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\c.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\head.png",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\head.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\share_via_barcode.png",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\share_via_barcode.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_holo_light.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_ic_clear_holo_light.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_searchview_right_holo_dark.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_textfield_searchview_right_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_ab_holo_light.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_spinner_ab_holo_light.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_search_dropdown_dark.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_search_dropdown_dark.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_searchview_holo_light.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_textfield_searchview_holo_light.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\splash_bachgrang.jpg",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\splash_bachgrang.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_ab_holo.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_tab_indicator_ab_holo.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_searchview_holo_dark.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_textfield_searchview_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    }
+]

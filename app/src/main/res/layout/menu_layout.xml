@@ -1,0 +1,93 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/deepskyblue"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/head"
+            android:id="@+id/imageView_head"
+            android:layout_gravity="center_horizontal" />
+        <TextView
+            android:id="@+id/textView_head_name"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+
+    <Button
+        android:background="@drawable/button_bg"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_query"
+        android:layout_marginTop="20dp"
+        android:text="食品查询"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"/>
+
+    <Button
+        android:background="@drawable/button_bg"
+        android:textColor="#FFFFFF"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="冰箱食谱"
+        android:id="@+id/button_food"
+        android:textSize="20sp"/>
+
+    <Button
+        android:background="@drawable/button_bg"
+        android:textColor="#FFFFFF"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="营养分析"
+        android:id="@+id/button_analyze"
+        android:textSize="20sp" />
+
+    <Button
+        android:background="@drawable/button_bg"
+        android:textColor="#FFFFFF"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="温度调节"
+        android:id="@+id/button_temp"
+        android:textSize="20sp"/>
+
+    <Button
+        android:background="@drawable/button_bg"
+        android:textColor="#FFFFFF"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="购物清单"
+        android:id="@+id/button_list_food"
+        android:textSize="20sp"/>
+    <Button
+        android:background="@drawable/button_bg"
+        android:textColor="#FFFFFF"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="生成二维码"
+        android:id="@+id/button_generate"
+        android:textSize="20sp"/>
+
+</LinearLayout>
