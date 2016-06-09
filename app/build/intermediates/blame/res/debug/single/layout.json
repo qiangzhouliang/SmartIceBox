@@ -8,16 +8,20 @@
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_action_bar_tabbar.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\cook_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\cook_layout.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_receiver__notification.xml",
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\activity_receiver__notification.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_home.xml",
-        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_action_bar_home.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\help.xml",
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\help.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_home.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_action_bar_home.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
@@ -30,6 +34,10 @@
     {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_qr_code_generated.xml",
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\activity_qr_code_generated.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\cook_step_detail.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\cook_step_detail.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
@@ -52,12 +60,12 @@
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\activity_login_main.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_scan.xml",
-        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\activity_scan.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_simple_decor.xml",
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_simple_decor.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_scan.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\activity_scan.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_shopping_list.xml",
@@ -76,20 +84,28 @@
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_action_bar_tab.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
-        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_action_menu_layout.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\bookmark_picker_list_item.xml",
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\bookmark_picker_list_item.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout3.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\layout3.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\slidingmenumain.xml",
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\QRCodeDemo-master2\\library\\unspecified\\res\\layout\\slidingmenumain.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_cook_book.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\fragment_cook_book.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_include.xml",
@@ -104,16 +120,16 @@
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
-        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_action_menu_item_layout.xml"
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout1.xml",
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\layout1.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
-        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_list_menu_item_checkbox.xml"
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_action_menu_item_layout.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item.xml",
@@ -148,12 +164,12 @@
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\fragment_left.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_list_menu_item_icon.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout.xml",
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
@@ -180,20 +196,32 @@
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\activity_splain.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_menu.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\fragment_menu.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_decor_include.xml",
-        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_action_bar_decor_include.xml"
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\mytextview.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\mytextview.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\share.xml",
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\share.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
-        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_action_mode_bar.xml"
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_decor_include.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_action_bar_decor_include.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_detail.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout\\fragment_detail.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_sliding_menu_list1.xml",

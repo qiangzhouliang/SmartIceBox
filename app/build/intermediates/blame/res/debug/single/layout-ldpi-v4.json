@@ -12,12 +12,12 @@
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout-ldpi\\layout_note_item.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout-ldpi-v4\\activity_note_detail.xml",
-        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout-ldpi\\activity_note_detail.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout-ldpi-v4\\capture.xml",
         "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout-ldpi\\capture.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout-ldpi-v4\\activity_note_detail.xml",
+        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout-ldpi\\activity_note_detail.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout-ldpi-v4\\layout_note_item_fragment.xml",
