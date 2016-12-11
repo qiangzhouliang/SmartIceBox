@@ -6,7 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.Constant;
+import com.constant.Constant;
 import com.fragment.RightFragment;
 import com.user.Note;
 

@@ -2,47 +2,35 @@ package com.glassky.main;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-
-import com.Constant;
-import com.user.Food;
+import com.constant.Constant;
 import com.user.Note;
+import com.util.DataOperate;
 import com.util.Load;
 
 import java.io.File;
-import java.util.List;
 
-import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.datatype.BmobFile;
-import cn.bmob.v3.datatype.BmobQueryResult;
 import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.SQLQueryListener;
-import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UploadFileListener;
 
 public class NoteNewActivity extends Activity implements View.OnClickListener,Load.LoadCompare {
 
     private String photo = "1.png";
-
     private EditText editText_name, editText_shelf_life, editText_num, editText_remark;
-
     private Button button_selectPhoto, button_save, button_cancel;
 
     private ImageView imageView1;
@@ -70,46 +58,40 @@ public class NoteNewActivity extends Activity implements View.OnClickListener,Lo
     private void save_food() {
         //得到图片文件路径
         String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/" + photo;
-        //图片的上传
-        final BmobFile bmobFile = new BmobFile(new File(path));
-        bmobFile.upload(this, new UploadFileListener() {
-            @Override
-            public void onSuccess() {
-                Note note = new Note();
-                String name = editText_name.getText().toString();
-                String shelf_life = editText_shelf_life.getText().toString();
-                String numm = editText_num.getText().toString();
-                int num = 0;
-                if (!numm.isEmpty()) {
-                    num = Integer.parseInt(numm);
-                }
-                String remark = editText_remark.getText().toString();
-                if (!TextUtils.isEmpty(name)) {
-                    note.setFoodname(name);
-                    note.setShelf_life(shelf_life);
-                    note.setNum(num);
-                    note.setRemark(remark);
-                    note.setIcon(bmobFile);
-                    note.save(NoteNewActivity.this, new SaveListener() {
-                        @Override
-                        public void onSuccess() {
-                            //保存成功
-                            Toast.makeText(NoteNewActivity.this, "添加数据成功", Toast.LENGTH_SHORT).show();
-                        }
+        System.out.println(path);
 
-                        @Override
-                        public void onFailure(int i, String s) {
-                            Toast.makeText(NoteNewActivity.this, "添加数据失败", Toast.LENGTH_SHORT).show();
+        File file = new File(path);
+        if (file != null) {
+            System.out.println("图片上传");
+            //图片的上传
+            final BmobFile bmobFile = new BmobFile(file);
+            bmobFile.uploadblock(new UploadFileListener() {
+                @Override
+                public void done(BmobException e) {
+                    if (e == null) {
+                        System.out.println("文件上传成功" + bmobFile.getFileUrl());
+                        Note note = new Note();
+                        String numm = editText_num.getText().toString();
+                        int num = 0;
+                        if (!numm.isEmpty()) {
+                            num = Integer.parseInt(numm);
                         }
-                    });
+                        String remark = editText_remark.getText().toString();
+                        if (!TextUtils.isEmpty(editText_name.getText().toString())) {
+                            note.setFoodname(editText_name.getText().toString());
+                            note.setShelf_life(editText_shelf_life.getText().toString());
+                            note.setNum(num);
+                            note.setRemark(remark);
+                            note.setIcon(bmobFile);
+                            DataOperate.addData(NoteNewActivity.this,note);
+                            finish();
+                        } else {
+                            Toast.makeText(NoteNewActivity.this, "文件上传失败", Toast.LENGTH_SHORT).show();
+                        }
+                    }
                 }
-            }
-
-            @Override
-            public void onFailure(int i, String s) {
-                System.out.println("--------" + s);
-            }
-        });
+            });
+        }
     }
 
 

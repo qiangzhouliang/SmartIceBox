@@ -3,8 +3,8 @@ package com.glassky.main;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.CheckBox;
@@ -12,13 +12,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.applocation.QzlApplication;
-import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.exception.DbException;
 import com.user.List_food;
 import com.user._User;
 import com.util.WorkConnected;
 
 import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 
 public class LoginMainActivity extends Activity {
@@ -91,27 +91,24 @@ public class LoginMainActivity extends Activity {
             final BmobUser bmobuser = new BmobUser();
             bmobuser.setUsername(username);
             bmobuser.setPassword(pass);
-            bmobuser.login(this, new SaveListener() {
+            bmobuser.login(new SaveListener<BmobUser>() {
                 @Override
-                public void onSuccess() {
-                    _User user = BmobUser.getCurrentUser(LoginMainActivity.this, _User.class);
-                    //邮箱验证是否成功
-                    if (user.getEmailVerified()) {
-                        Toast.makeText(LoginMainActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
-                        //登录成功后
-                        Intent intent = new Intent(LoginMainActivity.this, SlidingMenuList1Activity.class);
-                        intent.putExtra("user", user);
-                        startActivity(intent);
-                        finish();
-                    } else {
-                        Toast.makeText(LoginMainActivity.this, "用户未激活", Toast.LENGTH_SHORT).show();
+                public void done(BmobUser bmobUser, BmobException e) {
+                    if (e == null){
+                        _User user = (_User) BmobUser.getCurrentUser(_User.class);
+                        if (user.getEmailVerified()) {
+                            Toast.makeText(LoginMainActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();
+                            //登录成功后
+                            Intent intent = new Intent(LoginMainActivity.this, SlidingMenuList1Activity.class);
+                            intent.putExtra("user", user);
+                            startActivity(intent);
+                            finish();
+                        }else {
+                            Toast.makeText(LoginMainActivity.this, "用户未激活", Toast.LENGTH_SHORT).show();
+                        }
+                    }else {
+                        Toast.makeText(LoginMainActivity.this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
                     }
-                }
-
-                @Override
-                public void onFailure(int i, String s) {
-                    System.out.println("-----"+s);
-                    Toast.makeText(LoginMainActivity.this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
                 }
             });
         }else {

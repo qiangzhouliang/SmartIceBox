@@ -26,7 +26,7 @@ public class SendNotification {
         //builder.setOngoing(true);//设置为常驻通知
         builder.setAutoCancel(true);//自动清除
         builder.setDefaults(Notification.DEFAULT_ALL);//设置响铃跟震动
-        builder.setNumber(10);//发送了多少条
+        //builder.setNumber(10);//发送了多少条
         builder.setTicker("新消息");
 
         //定义一个意图，当点击通知时，要打开一个界面（Activity）

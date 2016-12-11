@@ -1,9 +1,9 @@
 package com.glassky.main;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.ContextMenu;
@@ -12,41 +12,42 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-
-import com.iflytek.cloud.SpeechConstant;
-import com.iflytek.cloud.SpeechUtility;
 import com.user.Note;
+import com.util.DataOperate;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.datatype.BmobFile;
-import cn.bmob.v3.listener.DeleteListener;
-import cn.bmob.v3.listener.FindListener;
-
+/**
+ * 查询食品，显示界面
+ */
 public class NoteListActivity extends ActionBarActivity {
 
     private static final int DEL_ITEM = 0x1;
-
-    //放note
+    //存放note
     private List<Note> notes = new ArrayList<Note>();
     private ListView listView;
     private NoteAdapter na;
+    private TextView tv_note_list_foodshape;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_list);//activity_note_list
+        tv_note_list_foodshape = (TextView) findViewById(R.id.tv_note_list_foodshape);
 
-        listView = (ListView) findViewById(R.id.listView_note);
+        initView();
+        initListener();
+        //上下文菜单
+        registerForContextMenu(listView);
+    }
 
+    private void initListener() {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -54,7 +55,6 @@ public class NoteListActivity extends ActionBarActivity {
                 TextView textView_shelf_life = (TextView) view.findViewById(R.id.textView_shelf_life);
                 TextView textView_num = (TextView) view.findViewById(R.id.textView_num);
                 TextView textView_remark = (TextView) view.findViewById(R.id.textView_remark);
-
 
                 String objectId = (String) view.getTag();//取出ID
                 String name = textView_name.getText().toString();//取出内容
@@ -71,8 +71,10 @@ public class NoteListActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        //上下文菜单
-        registerForContextMenu(listView);
+    }
+
+    private void initView() {
+        listView = (ListView) findViewById(R.id.listView_note);
     }
 
     @Override
@@ -84,31 +86,20 @@ public class NoteListActivity extends ActionBarActivity {
 
     //从后台取出数据
     private void loadData() {
-        //直接查询
-        BmobQuery<Note> query = new BmobQuery<Note>();
-        query.setLimit(50);//限定条数（默认是10条）
-        //查询多个
-        query.findObjects(this, new FindListener<Note>() {
+        DataOperate.getFoodInfo(NoteListActivity.this);
+        DataOperate.setOnListFood(new DataOperate.ListFood() {
             @Override
-            public void onSuccess(List<Note> list) {
+            public void listFood(List list) {
+                //查询出结果后将食物种类显示在textView上
+                tv_note_list_foodshape.setText("冰箱内有 "+list.size()+" 种食物");
                 notes = list;
                 na = new NoteAdapter(NoteListActivity.this,notes);
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        listView.setAdapter(na);
-                    }
-                });
-
-                System.out.println(notes.size());
-            }
-
-            @Override
-            public void onError(int i, String s) {
-
+                listView.setAdapter(na);
             }
         });
     }
+
+
     //自定义Note适配器（静态内部类）
     class NoteAdapter extends BaseAdapter {
 
@@ -152,7 +143,6 @@ public class NoteListActivity extends ActionBarActivity {
                 @Override
                 public void onClick(View v) {
                     if(flag){
-
                         flag = false;
                         remark.setSingleLine(flag);
                     }else{
@@ -162,28 +152,33 @@ public class NoteListActivity extends ActionBarActivity {
                 }
             });
             final ImageView imageView_icon = (ImageView) view.findViewById(R.id.imageView_iconn);
-            new Thread(new Runnable() {
+            DataOperate.getIcon(NoteListActivity.this,imageView_icon,note.getIcon().getFilename(),"",note.getIcon().getUrl());
+            DataOperate.setOnPhotoPath(new DataOperate.PhotoPath() {
                 @Override
-                public void run() {
-                    BmobFile bf = note.getIcon();
-
-                    if (bf != null) {
-                        //显示原图
-                        //bf.loadImage(this,iv);
-                        //缩列图
-                        bf.loadImageThumbnail(NoteListActivity.this, imageView_icon, 42, 42, 100);
-                    }
+                public void photoPath(final ImageView img, String str) {
+                    showPhoto(img, str);
                 }
-            }).start();
+            });
             name.setText(note.getFoodname());//设置显示内容
             String str = note.getNum() + "";
             num.setText(str);
             shelf_life.setText(note.getShelf_life());
             remark.setText(note.getRemark());
-
             view.setTag(note.getObjectId());//保存ID
             return view;
         }
+    }
+
+    private void showPhoto(final ImageView img, String str) {
+        Bitmap bitmap = null;
+        bitmap = BitmapFactory.decodeFile(str);
+        final Bitmap finalBitmap = bitmap;
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                img.setImageBitmap(finalBitmap);
+            }
+        });
     }
 
     //菜单被选中时
@@ -224,7 +219,14 @@ public class NoteListActivity extends ActionBarActivity {
                 System.out.println(info);
                 String objectId = (String) view.getTag();
                 Note note = new Note();
-                note.delete(this, objectId, new DeleteListener() {
+                DataOperate.deleteDate(NoteListActivity.this,note,objectId);
+                DataOperate.setOnOverLoad(new DataOperate.OverLoad() {
+                    @Override
+                    public void overLoad() {
+                        loadData();
+                    }
+                });
+                /*note.delete(this, objectId, new DeleteListener() {
                     @Override
                     public void onSuccess() {
                         loadData();//重新更新一下
@@ -234,7 +236,7 @@ public class NoteListActivity extends ActionBarActivity {
                     public void onFailure(int i, String s) {
 
                     }
-                });
+                });*/
                 break;
         }
         return super.onContextItemSelected(item);

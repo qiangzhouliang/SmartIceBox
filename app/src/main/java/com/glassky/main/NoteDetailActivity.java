@@ -5,11 +5,9 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.user.Note;
-
-import cn.bmob.v3.listener.UpdateListener;
+import com.util.DataOperate;
 
 public class NoteDetailActivity extends Activity {
     private EditText editText_name,editText_shelf_life,editText_num,editText_remark;
@@ -49,21 +47,8 @@ public class NoteDetailActivity extends Activity {
                 note.setShelf_life(shelf_life);
                 note.setNum(num);
                 note.setRemark(remark);
-                //更新数据
-                note.update(this, objectId, new UpdateListener() {
-                    @Override
-                    public void onSuccess() {
-                        //保存成功
-                        Toast.makeText(NoteDetailActivity.this, "修改数据成功", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onFailure(int i, String s) {
-                        Toast.makeText(NoteDetailActivity.this, "修改数据失败", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                DataOperate.updateData(NoteDetailActivity.this,note,objectId);
             }
-
         }
         return super.onKeyDown(keyCode, event);
     }

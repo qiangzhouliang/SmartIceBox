@@ -1,13 +1,8 @@
 package com.util;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Environment;
-import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
-import android.widget.ImageView;
 
 import com.user.Food;
 
@@ -33,7 +28,7 @@ public class Load {
     public static void load_Photo(Context context,final String photo ) {
         loadCompare = (LoadCompare) context;
         String bql = "select * from Food where photo = ?";//根据id号查询
-        new BmobQuery<Food>().doSQLQuery(context, bql, new SQLQueryListener<Food>() {
+        new BmobQuery<Food>().doSQLQuery(bql, new SQLQueryListener<Food>() {
             @Override
             public void done(BmobQueryResult<Food> result, BmobException e) {
                 if (e == null) {

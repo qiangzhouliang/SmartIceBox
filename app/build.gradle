@@ -20,7 +20,6 @@ android {
 }
 
 dependencies {
-    compile files('libs/BmobSDK_V3.4.5_1111.jar')
     compile project(':library')
     compile files('libs/Msc.jar')
     compile files('libs/Sunflower.jar')
@@ -29,4 +28,10 @@ dependencies {
     compile 'com.android.support:appcompat-v7:19.1.0'
     compile files('libs/httpmime-4.2.5.jar')
     compile files('libs/volley.jar')
+    compile files('libs/okio-1.7.0.jar')
+    compile files('libs/okhttp-3.3.1.jar')
+    compile files('libs/BmobSDK_3.5.3_20161116.jar')
+    compile files('libs/rxjava-1.1.6.jar')
+    compile files('libs/rxandroid-1.2.0.jar')
+    compile files('libs/gson-2.6.2.jar')
 }

@@ -7,11 +7,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.friendlyarm.SerialPortDemo.NoteListActivity">
+    >
     <TextView
+        android:id="@+id/tv_note_list_foodshape"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="查询结果如下..."
+        android:text="冰箱内食物种类有13中"
         android:textSize="16sp"/>
     <ListView
         android:layout_width="match_parent"

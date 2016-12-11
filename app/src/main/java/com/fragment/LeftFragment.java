@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.Constant;
+import com.constant.Constant;
 import com.applocation.QzlApplication;
 import com.glassky.main.R;
 import com.lidroid.xutils.exception.DbException;

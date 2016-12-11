@@ -1,10 +1,10 @@
 [
     {
-        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\encode.xml",
-        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout-land\\encode.xml"
+        "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\share.xml",
+        "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout-land\\share.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\share.xml",
-        "source": "D:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout-land\\share.xml"
+        "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\encode.xml",
+        "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\layout-land\\encode.xml"
     }
 ]

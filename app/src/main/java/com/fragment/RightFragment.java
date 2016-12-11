@@ -3,27 +3,23 @@ package com.fragment;
 
 import android.app.Fragment;
 import android.content.Context;
-import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.glassky.main.NoteDetailActivity;
 import com.glassky.main.R;
 import com.user.Note;
+import com.util.DataOperate;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.datatype.BmobFile;
-import cn.bmob.v3.listener.FindListener;
 
 /**
  *
@@ -55,20 +51,14 @@ public class RightFragment extends Fragment {
 
     private void loadData(){
         //直接查询
-        BmobQuery<Note> query = new BmobQuery<Note>();
-        query.setLimit(50);//限定条数（默认是10条）
-        query.findObjects(getActivity(), new FindListener<Note>() {
+        DataOperate.getFoodInfo(getActivity());
+        DataOperate.setOnListFood(new DataOperate.ListFood() {
             @Override
-            public void onSuccess(List<Note> list) {
+            public void listFood(List list) {
                 notes = list;
                 loadCompare.listFood(notes);
                 na = new NoteAdapter(getActivity(),notes);
                 listView2_right.setAdapter(na);
-            }
-
-            @Override
-            public void onError(int i, String s) {
-
             }
         });
     }
@@ -109,18 +99,21 @@ public class RightFragment extends Fragment {
             TextView num = (TextView) view.findViewById(R.id.textView_num);
             TextView shelf_life = (TextView) view.findViewById(R.id.textView_shelf_life);
             final ImageView imageView_icon = (ImageView) view.findViewById(R.id.imageView_iconn);
-            new Thread(new Runnable() {
+            DataOperate.getIcon(getActivity(),imageView_icon,note.getIcon().getFilename(),"",note.getIcon().getUrl());
+            DataOperate.setOnPhotoPath(new DataOperate.PhotoPath() {
                 @Override
-                public void run() {
-                    BmobFile bf = note.getIcon();
-                    if (bf != null) {
-                        //显示原图
-                        //bf.loadImage(this,iv);
-                        //缩列图
-                        bf.loadImageThumbnail(getActivity(), imageView_icon, 42, 42, 100);
-                    }
+                public void photoPath(final ImageView img, String str) {
+                    Bitmap bitmap = null;
+                    bitmap = BitmapFactory.decodeFile(str);
+                    final Bitmap finalBitmap = bitmap;
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            img.setImageBitmap(finalBitmap);
+                        }
+                    });
                 }
-            }).start();
+            });
             name.setText(note.getFoodname());//设置显示内容
             String str = note.getNum() + "";
             num.setText(str);

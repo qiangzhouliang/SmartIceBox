@@ -6,11 +6,13 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
+import android.text.TextUtils;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -22,7 +24,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
@@ -31,25 +32,23 @@ import com.notification.SendNotification;
 import com.user.Note;
 import com.user.Temp;
 import com.user._User;
+import com.util.DataOperate;
 import com.util.Vioce;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import cn.bmob.v3.Bmob;
-import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.datatype.BmobFile;
-import cn.bmob.v3.listener.DeleteListener;
-import cn.bmob.v3.listener.FindListener;
-import cn.bmob.v3.listener.GetListener;
-import cn.bmob.v3.listener.UpdateListener;
 
+/**
+ * 程序主界面
+ */
 public class SlidingMenuList1Activity extends Activity implements View.OnClickListener {
 
     protected static final int NID_1 = 0x1;
     protected static final int NID_2 = 0x2;
 
-    private final String str = "温馨提示，您的冰箱内有将要过期的食品,请及时使用！";
+    private final String str = "温馨提示，您的冰箱内有将要过期的食品,请及时食用！";
     private final String str1 = "温馨提示，您的冰箱内有已经过期的食品，请及时处理，误食过期食品对身体不好！";
     private boolean flag = true;//语音提示标志
     private boolean flag1 = true;//过期提示标志
@@ -59,7 +58,7 @@ public class SlidingMenuList1Activity extends Activity implements View.OnClickLi
     private ListView listView;
     private NoteAdapter na;
 
-    private int flag_date = 3;//默认保质期天数为 3 天
+    private int flag_date = 3;//默认保质期到期提醒天数为 3 天
     private Button button_query, button_food, button_analyze, button_generate, button_temp, button_list_food;
     private TextView textView_hint, textView_head_name,textView_temp,textView_open;
     private ImageView imageView_head;
@@ -76,15 +75,51 @@ public class SlidingMenuList1Activity extends Activity implements View.OnClickLi
         SpeechUtility.createUtility(this, SpeechConstant.APPID + "= 572ef5b8");
 
         //创建侧滑菜单
-        SlidingMenu menu = new SlidingMenu(this);
-        menu.setMode(SlidingMenu.LEFT);//从左侧滑
-        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);//触摸平的方式为全屏
-        menu.setFadeDegree(0.55f);//渐变度
-        menu.setMenu(R.layout.menu_layout);
-        menu.setBehindScrollScale(1.0f);//与下方视图的移动速度比
-        menu.setBehindOffsetRes(R.dimen.menu_offset);//设置相对屏幕偏移量
-        menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);//添加到界面
+        slidingMenu();
+        initView();
+        initListener();
+        //显示登录头像
+        loadHeadIcon();
+    }
 
+    private void loadHeadIcon() {
+        Bundle bundle = getIntent().getExtras();
+        final _User user = (_User) bundle.get("user");
+        textView_head_name.setText(user.getUsername().toString());
+        //加载图片
+        DataOperate.getIcon(SlidingMenuList1Activity.this,imageView_head,user.getIcon().getFilename(),"",user.getIcon().getUrl());
+        DataOperate.setOnPhotoPath(new DataOperate.PhotoPath() {
+            @Override
+            public void photoPath(final ImageView img, String str) {
+                showPhoto(img, str);
+            }
+        });
+        //上下文菜单
+        registerForContextMenu(listView);
+    }
+
+    private void showPhoto(final ImageView img, String str) {
+        Bitmap bitmap = null;
+        bitmap = BitmapFactory.decodeFile(str);
+        final Bitmap finalBitmap = bitmap;
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                img.setImageBitmap(finalBitmap);
+            }
+        });
+    }
+
+    private void initListener() {
+        button_query.setOnClickListener(this);
+        button_food.setOnClickListener(this);
+        button_analyze.setOnClickListener(this);
+        button_generate.setOnClickListener(this);
+        button_temp.setOnClickListener(this);
+        button_list_food.setOnClickListener(this);
+    }
+
+    private void initView() {
         button_query = (Button) findViewById(R.id.button_query);
         button_food = (Button) findViewById(R.id.button_food);
         button_analyze = (Button) findViewById(R.id.button_analyze);
@@ -98,30 +133,17 @@ public class SlidingMenuList1Activity extends Activity implements View.OnClickLi
         textView_head_name = (TextView) findViewById(R.id.textView_head_name);
         textView_temp = (TextView) findViewById(R.id.textView_temp);
         textView_open = (TextView) findViewById(R.id.textView_open);
+    }
 
-        button_query.setOnClickListener(this);
-        button_food.setOnClickListener(this);
-        button_analyze.setOnClickListener(this);
-        button_generate.setOnClickListener(this);
-        button_temp.setOnClickListener(this);
-        button_list_food.setOnClickListener(this);
-
-        Bundle bundle = getIntent().getExtras();
-        final _User user = (_User) bundle.get("user");
-        textView_head_name.setText(user.getUsername().toString());
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                BmobFile bf = user.getIcon();
-                if (bf != null) {
-                    //缩列图
-                    bf.loadImageThumbnail(SlidingMenuList1Activity.this, imageView_head, 64, 64, 100);
-                }
-            }
-        }).start();
-
-        //上下文菜单
-        registerForContextMenu(listView);
+    private void slidingMenu() {
+        SlidingMenu menu = new SlidingMenu(this);
+        menu.setMode(SlidingMenu.LEFT);//从左侧滑
+        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);//触摸平的方式为全屏
+        menu.setFadeDegree(0.55f);//渐变度
+        menu.setMenu(R.layout.menu_layout);
+        menu.setBehindScrollScale(1.0f);//与下方视图的移动速度比
+        menu.setBehindOffsetRes(R.dimen.menu_offset);//设置相对屏幕偏移量
+        menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);//添加到界面
     }
 
     @Override
@@ -136,7 +158,7 @@ public class SlidingMenuList1Activity extends Activity implements View.OnClickLi
                         string = "";
                         loadData();
                         Thread.sleep(1000 * 60 * 2);//86400000
-                        if(flag2 == true) {
+                        if(flag2 == true && !TextUtils.isEmpty(string)) {
                             new SendNotification().sendNotification1(SlidingMenuList1Activity.this, string, (NotificationManager) getSystemService(NOTIFICATION_SERVICE), NID_1);
                         }
                     } catch (InterruptedException e) {
@@ -150,7 +172,7 @@ public class SlidingMenuList1Activity extends Activity implements View.OnClickLi
             @Override
             public void run() {
                 while (true) {
-                    //查询温度
+                    //查询温度，获取冰箱内部温度
                     queryTemp();
                     try {
                         Thread.sleep(1000);
@@ -161,33 +183,27 @@ public class SlidingMenuList1Activity extends Activity implements View.OnClickLi
             }
         }).start();
         flag1 = true;
-
     }
 
-    ArrayList<String> list = new ArrayList<String>();
+    List<String> list = new ArrayList<String>();
     //温度查询
     private void queryTemp() {
-        BmobQuery<Temp> bmobQuery = new BmobQuery<Temp>();
         //查询一个
-        bmobQuery.getObject(this, "10166ef327", new GetListener<Temp>() {
+        DataOperate.getTemp("10166ef327");
+        DataOperate.setOnTemp(new DataOperate.TempQuery() {
             @Override
-            public void onSuccess(Temp temp) {
-                Temp t = new Temp();
-                t = temp;
-                openDown(t.getOpenflag());
-                Message message = new Message();
-                message.what = 1;
-                message.obj = t;
-                handler.sendMessage(message);
-            }
-
-            @Override
-            public void onFailure(int i, String s) {
-               // Toast.makeText(SlidingMenuList1Activity.this, "查询数据失败", Toast.LENGTH_SHORT).show();
+            public void tempquery(Object obj) {
+                Temp temp = (Temp) obj;
+                openDown(temp.getOpenflag());
+                textView_temp.setText(temp.getTemp());
+                if (temp.getOpenflag().equals("01")) {
+                    textView_open.setText("关");
+                } else if (temp.getOpenflag().equals("02")) {
+                    textView_open.setText("开");
+                }
             }
         });
     }
-
     //判断门的状态
     private void openDown(String openflag) {
         if(openflag.equals("01")){
@@ -199,9 +215,11 @@ public class SlidingMenuList1Activity extends Activity implements View.OnClickLi
             open_down = 0;
             new SendNotification().sendNotification1(this,"您的冰箱门开着，请及时关门，以节约电费",(NotificationManager) getSystemService(NOTIFICATION_SERVICE),NID_2);
         }
-        System.out.println("open_down = "+open_down);
     }
 
+    /**
+     * 消息处理事务，处理不能在主线程中更新的数据
+     */
     private Handler handler = new Handler() {
         public void handleMessage(Message msg) {
         switch (msg.what) {
@@ -224,32 +242,18 @@ public class SlidingMenuList1Activity extends Activity implements View.OnClickLi
     //从后台取出数据
     private void loadData() {
         flag1 = true;
-        //直接查询
-        BmobQuery<Note> query = new BmobQuery<Note>();
-        query.setLimit(50);//限定条数（默认是10条）
-        //查询多个
-        query.findObjects(this, new FindListener<Note>() {
+        //直接查询食品信息
+        DataOperate.getFoodInfo(SlidingMenuList1Activity.this);
+        DataOperate.setOnListFood(new DataOperate.ListFood() {
             @Override
-            public void onSuccess(List<Note> list) {
+            public void listFood(List list) {
                 notes = list;
                 na = new NoteAdapter(SlidingMenuList1Activity.this, notes);
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        listView.setAdapter(na);
-                    }
-                });
-
-                System.out.println(notes.size());
+                listView.setAdapter(na);
                 if (notes.size() == 0) {
                     textView_hint.setText("温馨提示：您的冰箱内没有将要过期的食物...");
                     textView_hint.setTextColor(Color.BLACK);
                 }
-            }
-
-            @Override
-            public void onError(int i, String s) {
-
             }
         });
     }
@@ -331,29 +335,21 @@ public class SlidingMenuList1Activity extends Activity implements View.OnClickLi
         builder.create().show();
     }
 
+    /**
+     * 更新调节温度
+     * @param in
+     */
     private void temperatureTo(String in) {
         Temp t = new Temp();
         t.setFlagtemp(in);
-       // t.save(this);
-        //更新数据
-        t.update(this, "10166ef327", new UpdateListener() {
-            @Override
-            public void onSuccess() {
-                //保存成功
-                Toast.makeText(SlidingMenuList1Activity.this, "修改数据成功", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(int i, String s) {
-                Toast.makeText(SlidingMenuList1Activity.this, "修改数据失败", Toast.LENGTH_SHORT).show();
-            }
-        });
+        DataOperate.updateData(SlidingMenuList1Activity.this,t,"10166ef327");
     }
 
     //营养分析
     private void trophic_analysis() {
         startActivity(new Intent(this, Trophic_analysis_Activity.class));
     }
+
 
     //自定义Note适配器（静态内部类）
     class NoteAdapter extends BaseAdapter {
@@ -388,7 +384,6 @@ public class SlidingMenuList1Activity extends Activity implements View.OnClickLi
             final Note note = list.get(i);
             String id = note.getObjectId();//拿到id
             int num_flag = Integer.parseInt(note.getShelf_life());
-
             if ((num_flag) <= flag_date) {
                 flag1 = false;
                 //获取列表布局
@@ -448,16 +443,13 @@ public class SlidingMenuList1Activity extends Activity implements View.OnClickLi
 
                 string += "食物名称："+note.getFoodname()+","+"    食物数量："+note.getNum()+","+"    保质期(天)："+note.getShelf_life()+","+"    备注："+note.getRemark()+","+"    购买日期： "+note.getCreatedAt()+"!\n";
                 final ImageView imageView_icon = (ImageView) view.findViewById(R.id.imageView_iconn);
-                new Thread(new Runnable() {
+                DataOperate.getIcon(SlidingMenuList1Activity.this,imageView_icon,note.getIcon().getFilename(),"",note.getIcon().getUrl());
+                DataOperate.setOnPhotoPath(new DataOperate.PhotoPath() {
                     @Override
-                    public void run() {
-                        BmobFile bf = note.getIcon();
-                        if (bf != null) {
-                            //缩列图
-                            bf.loadImageThumbnail(SlidingMenuList1Activity.this, imageView_icon, 50, 50, 100);
-                        }
+                    public void photoPath(ImageView img, String str) {
+                        showPhoto(img,str);
                     }
-                }).start();
+                });
             } else if (flag1) {
                 textView_hint.setText("提示：您的冰箱内没有将要过期的食物...");
                 textView_hint.setTextColor(Color.BLACK);
@@ -483,23 +475,19 @@ public class SlidingMenuList1Activity extends Activity implements View.OnClickLi
                 AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
                 View view = info.targetView;//就是当前目标（点击的目标）
                 //测试
-                System.out.println(info);
                 String objectId = (String) view.getTag();
                 Note note = new Note();
-                note.delete(this, objectId, new DeleteListener() {
+                //删除数据
+                DataOperate.deleteDate(SlidingMenuList1Activity.this,note,objectId);
+                DataOperate.setOnOverLoad(new DataOperate.OverLoad() {
                     @Override
-                    public void onSuccess() {
-                        loadData();//重新更新一下
-                    }
-
-                    @Override
-                    public void onFailure(int i, String s) {
-                        System.out.println("-----" + s);
+                    public void overLoad() {
+                        loadData();
                     }
                 });
                 break;
         }
         return super.onContextItemSelected(item);
     }
-
 }
+

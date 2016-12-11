@@ -11,7 +11,6 @@ import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -22,7 +21,10 @@ import com.fragment.MenuFragment;
 
 import java.util.ArrayList;
 
-public class RecipeActivity extends Activity implements ViewPager.OnPageChangeListener,CookBookFragment.CookBookChange,MenuFragment.CookBookStep{
+/**
+ * 冰箱食谱
+ */
+public class RecipeActivity extends Activity implements CookBookFragment.CookBookChange,MenuFragment.CookBookStep{
 
     private ViewPager viewPager;
     private PagerTabStrip pagerTabStrip;
@@ -31,7 +33,7 @@ public class RecipeActivity extends Activity implements ViewPager.OnPageChangeLi
 
     //定义一组标题
     private String[] titles = {"冰箱食谱","今日推荐","食材大全"};
-    //用来装布局用的
+    //用来存放布局
     private ArrayList<View> views = new ArrayList<View>();
 
     @Override
@@ -44,7 +46,7 @@ public class RecipeActivity extends Activity implements ViewPager.OnPageChangeLi
     private void initView(){
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         pagerTabStrip = (PagerTabStrip) findViewById(R.id.pagertab);
-        //将四个布局加入到views里面去
+        //将三个布局加入到views里面去
         views.add(getLayoutInflater().inflate(R.layout.layout2,null));
         views.add(getLayoutInflater().inflate(R.layout.layout1, null));
         views.add(getLayoutInflater().inflate(R.layout.layout3, null));
@@ -54,37 +56,48 @@ public class RecipeActivity extends Activity implements ViewPager.OnPageChangeLi
         pagerTabStrip.setTabIndicatorColor(getResources().getColor(android.R.color.holo_blue_bright));//设置指示器的颜色
         pagerTabStrip.setTextColor(Color.WHITE);
         pagerTabStrip.setTextSize(1, 16.0f);
-        viewPager.setOnPageChangeListener(this);//注册事件
         viewPager.setAdapter(new MyPagerAdapter());
-        viewPager.setCurrentItem(1);
+        viewPager.setCurrentItem(0);
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                //加载冰箱食谱
+                if(position == 0){
+                    cbf = CookBookFragment.getInstance("");
+                    //动态加载fragment
+                    loadFragment(cbf);
+                }else if(position == 1){
+                    //今日推荐功能
+                    webView = (WebView)views.get(position).findViewById(R.id.web_view);
+                    String url = "http://m.yz.sm.cn/s?q=%E7%BE%8E%E9%A3%9F&from=wm936310";
+                    webViewLoad(webView,url);
+                }else if(position == 2){
+                    //食材大全
+                    webView = (WebView)views.get(position).findViewById(R.id.web_view2);
+                    String url = "http://www.douguo.com/shicai/";
+                    webViewLoad(webView,url);
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
-    //正在滚动
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-    }
-    //页面被选中了
-    @Override
-    public void onPageSelected(int position) {
-        //加载今日推荐
-        if(position == 0){
-            cbf = CookBookFragment.getInstance("");
-            loadFragment(cbf);
-        }else if(position == 1){
-            webView = (WebView)views.get(position).findViewById(R.id.web_view);
-            String url = "http://m.yz.sm.cn/s?q=%E7%BE%8E%E9%A3%9F&from=wm936310";
-            webViewLoad(webView,url);
-        }else if(position == 2){
-            webView = (WebView)views.get(position).findViewById(R.id.web_view2);
-            String url = "http://www.douguo.com/shicai/";
-            webViewLoad(webView,url);
-        }
-    }
-    //动态加载fragment
+    /**
+     * 动态加载fragment
+     * @param fragment
+     */
     private void loadFragment(Fragment fragment) {
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.content, fragment);
+        ft.replace(R.id.content, fragment);//删除+加载
         //把当前Fragment添加到Activity栈中
         ft.addToBackStack(null);
         ft.commit();
@@ -103,12 +116,6 @@ public class RecipeActivity extends Activity implements ViewPager.OnPageChangeLi
             }
         });
         webView.loadUrl(url);
-    }
-
-    //状态正在发生变化
-    @Override
-    public void onPageScrollStateChanged(int state) {
-
     }
 
     /**

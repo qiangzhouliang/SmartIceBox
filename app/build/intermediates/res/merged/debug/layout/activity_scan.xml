@@ -79,6 +79,7 @@
             android:layout_weight="1"
             android:background="@drawable/button_bg"
             android:id="@+id/button_add"
+            android:onClick="on_Click"
             android:layout_gravity="bottom" />
 
         <Button
@@ -88,6 +89,7 @@
             android:layout_weight="1"
             android:background="@drawable/button_bg"
             android:id="@+id/button_delete"
+            android:onClick="del"
             android:layout_gravity="bottom" />
     </LinearLayout>
 

@@ -46,7 +46,6 @@ public class CookBookFragment extends Fragment {
     private CookBookChange cookBookChange;
     public CookBookFragment() {
     }
-
     /**
      * 实例化的同时传递参数
      * @param title
@@ -54,14 +53,16 @@ public class CookBookFragment extends Fragment {
      */
     public static CookBookFragment getInstance(String title){
         CookBookFragment c = new CookBookFragment();
-
         Bundle b = new Bundle();
         b.putString("title",title);
         c.setArguments(b);
         return c;
     }
 
-    //获得宿主activity
+    /**
+     * 获得宿主activity
+     * @param activity
+     */
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -73,6 +74,7 @@ public class CookBookFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cook_book,container,false);
         layoutInflater = inflater;
+        //初始化控件
         init(view);
         return view;
     }
@@ -91,12 +93,14 @@ public class CookBookFragment extends Fragment {
         th.addTab(th.newTabSpec("tab3").setIndicator("老人", getResources().getDrawable(R.drawable.ic_launcher))
                 .setContent(R.id.tab3));
         // 上面的null可以为getResources().getDrawable(R.drawable.图片名)设置图标
-
+        //获取搜索匡组件
         searchView = (SearchView) view.findViewById(R.id.serchView);
+        //获取列表组件
         listView = (ListView) view.findViewById(R.id.listView);
         searchView.setSubmitButtonEnabled(true);
+        //设置提示信息
         searchView.setQueryHint("查询");
-
+        //得到查询结果
         Cursor cursor = getTestCursor();
         @SuppressWarnings("deprecation")
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(activity, R.layout.mytextview, cursor,
