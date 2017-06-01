@@ -25,7 +25,7 @@ import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UpdateListener;
 
 /**
- * 对数据库的操作
+ * 对数据库的操作，分装对后台服务器的操作
  * Created by Qzl on 2016-12-10.
  */
 

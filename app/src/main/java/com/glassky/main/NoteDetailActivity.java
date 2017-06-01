@@ -26,7 +26,6 @@ public class NoteDetailActivity extends Activity {
         editText_shelf_life.setText(getIntent().getStringExtra("shelf_life"));
         editText_num.setText(getIntent().getStringExtra("num"));
         editText_remark.setText(getIntent().getStringExtra("remark"));
-
     }
 
     //返回键自动保存

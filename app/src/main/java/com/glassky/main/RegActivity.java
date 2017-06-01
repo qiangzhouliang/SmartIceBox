@@ -51,6 +51,7 @@ public class RegActivity extends Activity implements Load.LoadCompare{
     public void strPath(String path) {
         //注册方法
         reg(path);
+        System.out.println("注册");
     }
 
     private void reg(String path) {
@@ -80,6 +81,7 @@ public class RegActivity extends Activity implements Load.LoadCompare{
                                 startActivity(intent);
                                 finish();
                             }else {
+                                Toast.makeText(RegActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
                                 System.out.println(e);
                             }
                         }

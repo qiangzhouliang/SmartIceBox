@@ -85,9 +85,9 @@ public class NoteNewActivity extends Activity implements View.OnClickListener,Lo
                             note.setIcon(bmobFile);
                             DataOperate.addData(NoteNewActivity.this,note);
                             finish();
-                        } else {
-                            Toast.makeText(NoteNewActivity.this, "文件上传失败", Toast.LENGTH_SHORT).show();
                         }
+                    }else {
+                        Toast.makeText(NoteNewActivity.this, "文件上传失败", Toast.LENGTH_SHORT).show();
                     }
                 }
             });

@@ -24,12 +24,12 @@
         "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_textfield_searchview_right_holo_dark.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
-        "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_list_selector_holo_dark.xml"
-    },
-    {
         "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\aged_1.png",
         "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\aged_1.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
         "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\a_4.png",
@@ -44,12 +44,12 @@
         "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\gravida_14.jpg"
     },
     {
-        "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\a_15.png",
-        "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\a_15.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\aged_13.png",
         "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\aged_13.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\a_15.png",
+        "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\a_15.png"
     },
     {
         "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\gravida_2.jpg",
@@ -116,12 +116,12 @@
         "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\gravida_33.jpg"
     },
     {
-        "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\a_19.png",
-        "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\a_19.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\aged_17.png",
         "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\aged_17.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\a_19.png",
+        "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\a_19.png"
     },
     {
         "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\aged_4.png",
@@ -136,12 +136,12 @@
         "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\aged_16.png"
     },
     {
-        "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\gravida_9.jpg",
-        "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\gravida_9.jpg"
-    },
-    {
         "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\gravida_11.jpg",
         "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\gravida_11.jpg"
+    },
+    {
+        "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\gravida_9.jpg",
+        "source": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\src\\main\\res\\drawable\\gravida_9.jpg"
     },
     {
         "merged": "E:\\AndroidStudioProjects\\QRCodeDemo-master2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\aged_10.png",

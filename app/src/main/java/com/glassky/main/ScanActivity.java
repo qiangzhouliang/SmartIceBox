@@ -80,7 +80,7 @@ public class ScanActivity extends ActionBarActivity implements Load.LoadCompare{
         DataOperate.deleteDate(ScanActivity.this,note,strId);
         DataOperate.setOnSuccessAndFalied(new DataOperate.SuccessAndFalied() {
             @Override
-            public void success() {
+            public void success(){
                 finish();
             }
 

@@ -57,7 +57,8 @@ public class RecipeActivity extends Activity implements CookBookFragment.CookBoo
         pagerTabStrip.setTextColor(Color.WHITE);
         pagerTabStrip.setTextSize(1, 16.0f);
         viewPager.setAdapter(new MyPagerAdapter());
-        viewPager.setCurrentItem(0);
+        viewPager.setCurrentItem(1);
+        cookRecommend(1);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -66,16 +67,16 @@ public class RecipeActivity extends Activity implements CookBookFragment.CookBoo
 
             @Override
             public void onPageSelected(int position) {
+                System.out.println("position : "+position);
                 //加载冰箱食谱
                 if(position == 0){
                     cbf = CookBookFragment.getInstance("");
                     //动态加载fragment
                     loadFragment(cbf);
                 }else if(position == 1){
+                    System.out.println("今日推荐页面开始加载。。。");
                     //今日推荐功能
-                    webView = (WebView)views.get(position).findViewById(R.id.web_view);
-                    String url = "http://m.yz.sm.cn/s?q=%E7%BE%8E%E9%A3%9F&from=wm936310";
-                    webViewLoad(webView,url);
+                    cookRecommend(position);
                 }else if(position == 2){
                     //食材大全
                     webView = (WebView)views.get(position).findViewById(R.id.web_view2);
@@ -89,6 +90,13 @@ public class RecipeActivity extends Activity implements CookBookFragment.CookBoo
 
             }
         });
+    }
+
+    //今日推荐功能
+    private void cookRecommend(int position) {
+        webView = (WebView)views.get(position).findViewById(R.id.web_view);
+        String url = "http://m.meishichina.com/recipe/";
+        webViewLoad(webView,url);
     }
 
     /**

@@ -9,7 +9,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/blanchedalmond"
     android:alpha="0.8"
-    tools:context="com.qzl.bmob_3_3.NoteNewActivity"
     android:orientation="vertical">
     <TableLayout
         android:layout_width="match_parent"
