@@ -91,6 +91,7 @@ public class Qr_code_generatedActivity extends ActionBarActivity implements View
     }
 
     private void button_generate() {
+        System.out.println("button_generate");
         String name = editText_name.getText().toString();
         String shelf_life = editText_shelf_life.getText().toString();
         String num = editText_num.getText().toString();
@@ -140,6 +141,7 @@ public class Qr_code_generatedActivity extends ActionBarActivity implements View
 
                 //设置图像
                 codeImg.setImageBitmap(bitmap);
+                System.out.println("二维码已生成");
                 saveBitmap(bitmap);
 
             } catch (WriterException e) {
